@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Presets/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Presets/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Presets/timer.tres" type="Resource" id=3]
+[ext_resource path="res://Stages/TimerLabel.gd" type="Script" id=4]
+[ext_resource path="res://Presets/Door.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Fonts/SpaceWhamRegular-4V5B.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[node name="Stage1" type="Node2D"]
+
+[node name="Door" parent="." instance=ExtResource( 5 )]
+position = Vector2( 800, 448 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 416 )
+gravity = 20.0
+jumpPower = 400
+timer = ExtResource( 3 )
+moveSpeed = 200
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 9, 0, 65536, 3, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 65549, 5, 0, 65550, 5, 0, 65551, 9, 0, 131072, 3, 0, 131087, 9, 0, 196608, 3, 0, 196623, 9, 0, 262144, 3, 0, 262159, 9, 0, 327680, 3, 0, 327695, 9, 0, 393216, 3, 0, 393231, 9, 0, 458752, 3, 0, 458767, 9, 0, 524288, 3, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 9, 0 )
+
+[node name="TimerLabel" type="Label" parent="."]
+margin_left = 968.0
+margin_right = 1024.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "60"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+timer = ExtResource( 3 )
+[connection signal="body_entered" from="Door" to="Door" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_Area_body_exited"]
