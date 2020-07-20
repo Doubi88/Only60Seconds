@@ -17,9 +17,10 @@ font_data = SubResource( 1 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 800, 448 )
+timer = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 416 )
+position = Vector2( 120, 480 )
 gravity = 20.0
 jumpPower = 400
 timer = ExtResource( 3 )
