@@ -3,10 +3,13 @@ extends Creature
 class_name TimeTraveller
 
 export var travelSpeed = 1
-export var timer: Resource
 
 func _process(delta: float) -> void:
 	if (Input.is_action_pressed("time_travel")):
-		timer.reverse = true
+		GlobalVars.timer.reverse = true
+		if (get_node("ColorInverterRect") != null):
+			get_node("ColorInverterRect").show()
 	else:
-		timer.reverse = false
+		GlobalVars.timer.reverse = false
+		if (get_node("ColorInverterRect") != null):
+			get_node("ColorInverterRect").hide()

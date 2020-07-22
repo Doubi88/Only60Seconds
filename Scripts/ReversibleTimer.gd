@@ -1,8 +1,5 @@
-extends Resource
 
 class_name ReversibleTimer
-
-signal timeout
 
 export var maxTime = 60
 export var timeLeft = 0.0
@@ -16,8 +13,6 @@ func timeTick(delta: float) -> void:
 		if (timeLeft < maxTime):
 			timeLeft += delta
 	else:
-		timeLeft -= delta
-	
-	if (timeLeft <= 0):
-		emit_signal("timeout")
+		if (timeLeft > 0):
+			timeLeft -= delta
 	

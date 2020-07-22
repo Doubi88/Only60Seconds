@@ -54,6 +54,72 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground03/StaticBody2D"]
 shape = SubResource( 1 )
 
+[node name="Background1" type="Sprite" parent="."]
+position = Vector2( 360, 72 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 64, 64, 64 )
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 432, 72 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 64, 64, 64 )
+
+[node name="Background4" type="Sprite" parent="."]
+position = Vector2( 360, 144 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 256, 64, 64 )
+
+[node name="Background5" type="Sprite" parent="."]
+position = Vector2( 432, 144 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 256, 64, 64 )
+
+[node name="Background3" type="Sprite" parent="."]
+position = Vector2( 288, 144 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 256, 64, 64 )
+
+[node name="Background6" type="Sprite" parent="."]
+position = Vector2( 72, -88 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 256, 64, 64 )
+
+[node name="Background7" type="Sprite" parent="."]
+position = Vector2( 136, -88 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 384, 256, 64, 64 )
+
+[node name="Background8" type="Sprite" parent="."]
+position = Vector2( 224, -88 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 448, 256, 64, 64 )
+
+[node name="Background11" type="Sprite" parent="."]
+position = Vector2( 504, -96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 320, 64, 64 )
+
+[node name="Background9" type="Sprite" parent="."]
+position = Vector2( 408, -96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 320, 64, 64 )
+
+[node name="Background10" type="Sprite" parent="."]
+position = Vector2( 312, -96 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 320, 64, 64 )
+
 [node name="Ground04" type="Sprite" parent="."]
 position = Vector2( 288, 0 )
 texture = ExtResource( 1 )

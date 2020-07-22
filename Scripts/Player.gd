@@ -2,7 +2,9 @@ extends TimeTraveller
 
 class_name Player
 
-export var moveSpeed = 500
+signal died
+
+export var moveSpeed = 200
 var touchingUsable: Area2D = null
 
 func _process(delta: float) -> void:
@@ -19,9 +21,15 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("use")):
 		if (touchingUsable != null && touchingUsable.has_method("use")):
 			touchingUsable.use()
-		
+	
 	setVelocity(velocity)
+	
+	if (is_on_floor()):
+		$PlayerSprite.frame = 0
+	else:
+		$PlayerSprite.frame = 1
 
 func setUsable(usable):
 	if (usable == null || usable.has_method("use")):
 		touchingUsable = usable
+

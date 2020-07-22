@@ -2,8 +2,8 @@ extends TimedObject
 
 class_name Door
 
-export var isOpen = false
-export var timer: Resource
+export var isOpen = false setget setIsOpenWithoutSaving
+export var openOnSwitch = true
 
 func _process(delta: float) -> void:
 	if (isOpen):
@@ -11,27 +11,26 @@ func _process(delta: float) -> void:
 	else:
 		$AnimatedSprite.frame = 0
 		
-	if (timer.reverse):
-		var action = getAction(round(timer.timeLeft))
+	if (GlobalVars.timer.reverse):
+		var action = getAction(round(GlobalVars.timer.timeLeft))
 		if (action == "open"):
-			isOpen = false
+			setIsOpenWithoutSaving(false)
 		elif (action == "close"):
-			isOpen = true
-
-func use():
-	isOpen = !isOpen
+			setIsOpenWithoutSaving(true)
+func toggleIsOpen():
+	setIsOpenWithoutSaving(!isOpen)
 	if (isOpen):
-		saveAction(round(timer.timeLeft), "open")
+		saveAction(round(GlobalVars.timer.timeLeft), "open")
 	else:
-		saveAction(round(timer.timeLeft), "close")
+		saveAction(round(GlobalVars.timer.timeLeft), "close")
+
+func setIsOpenWithoutSaving(value: bool):
+	isOpen = value
+	$CollisionShape2D.disabled = isOpen
 
 
-func _on_Area_body_entered(body: Node) -> void:
-	print(body.name + " entered " + name)
-	if (body.has_method("setUsable")):
-		body.setUsable(self)
-
-func _on_Area_body_exited(body: Node) -> void:
-	print(body.name + " exited " + name)
-	if (body.has_method("setUsable")):
-		body.setUsable(null)
+func _on_Switch_switched(isOn) -> void:
+	if (openOnSwitch):
+		setIsOpenWithoutSaving(isOn)
+	else:
+		setIsOpenWithoutSaving(!isOn)

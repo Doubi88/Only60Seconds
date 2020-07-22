@@ -19,15 +19,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Door.gd"
 }, {
+"base": "Area2D",
+"class": "NextStageArea",
+"language": "GDScript",
+"path": "res://Presets/NextStageArea.gd"
+}, {
 "base": "TimeTraveller",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
 }, {
-"base": "Resource",
+"base": "Reference",
 "class": "ReversibleTimer",
 "language": "GDScript",
 "path": "res://Scripts/ReversibleTimer.gd"
+}, {
+"base": "Node2D",
+"class": "StageScript",
+"language": "GDScript",
+"path": "res://Stages/StageScript.gd"
+}, {
+"base": "TimedObject",
+"class": "Switch",
+"language": "GDScript",
+"path": "res://Scripts/Switch.gd"
 }, {
 "base": "Creature",
 "class": "TimeTraveller",
@@ -47,8 +62,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Creature": "",
 "Door": "",
+"NextStageArea": "",
 "Player": "",
 "ReversibleTimer": "",
+"StageScript": "",
+"Switch": "",
 "TimeTraveller": "",
 "TimedObject": "",
 "TimerLabel": ""
@@ -58,8 +76,12 @@ _global_script_class_icons={
 
 config/name="Only 60 Seconds"
 config/description="You only have 60 seconds to solve the puzzle. But you can turn back time."
-run/main_scene="res://Stages/Stage1.tscn"
-config/icon="res://Sprites/icon.png"
+run/main_scene="res://Stages/StartStage.tscn"
+config/icon="res://Sprites/bot/PNG/Side view/robot_greenDrive1.png"
+
+[autoload]
+
+GlobalVars="*res://Scripts/GlobalVars.gd"
 
 [input]
 

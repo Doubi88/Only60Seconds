@@ -4,8 +4,8 @@ class_name Creature
 
 var velocity = Vector2();
 
-export var gravity = 9.81
-export var jumpPower = 200
+export var gravity = 20
+export var jumpPower = 600
 
 const FLOOR = Vector2(0, -1)
 

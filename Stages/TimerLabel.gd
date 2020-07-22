@@ -2,8 +2,10 @@ extends Label
 
 class_name TimerLabel
 
-export var timer: Resource
+signal timeout
 
 func _process(delta: float) -> void:
-	timer.timeTick(delta)
-	text = "%02d" % [timer.timeLeft]
+	GlobalVars.timer.timeTick(delta)
+	text = "%02d" % [GlobalVars.timer.timeLeft]
+	if (GlobalVars.timer.timeLeft <= 0):
+		emit_signal("timeout")

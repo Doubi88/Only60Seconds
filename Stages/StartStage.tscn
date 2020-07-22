@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Presets/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Presets/TimerLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Presets/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Presets/LaserDoor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Presets/Switch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Presets/NextStageArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Stages/StageScript.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonts/SpaceWhamRegular-4V5B.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32, 32 )
+
+[node name="StartStage" type="Node2D"]
+script = ExtResource( 7 )
+nextScene = "res://Stages/Stage1.tscn"
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 16, 0, 1, 16, 0, 2, 16, 0, 3, 16, 0, 4, 16, 0, 5, 16, 0, 6, 16, 0, 7, 16, 0, 8, 16, 0, 9, 16, 0, 10, 16, 0, 11, 16, 0, 12, 16, 0, 13, 16, 0, 14, 16, 0, 15, 16, 0, 16, 16, 0, 65536, 16, 0, 65537, 16, 0, 65538, 16, 0, 65539, 16, 0, 65540, 16, 0, 65541, 16, 0, 65542, 16, 0, 65543, 16, 0, 65544, 16, 0, 65545, 16, 0, 65546, 16, 0, 65547, 16, 0, 65548, 16, 0, 65549, 16, 0, 65550, 16, 0, 65551, 16, 0, 65552, 16, 0, 131072, 16, 0, 131073, 16, 0, 131074, 16, 0, 131075, 16, 0, 131076, 16, 0, 131077, 16, 0, 131078, 16, 0, 131079, 16, 0, 131080, 16, 0, 131081, 16, 0, 131082, 16, 0, 131083, 16, 0, 131084, 16, 0, 131085, 16, 0, 131086, 16, 0, 131087, 16, 0, 131088, 16, 0, 196609, 16, 0, 196610, 16, 0, 196611, 16, 0, 196612, 16, 0, 196613, 16, 0, 196614, 16, 0, 196615, 16, 0, 196616, 16, 0, 196617, 16, 0, 196618, 16, 0, 196619, 16, 0, 196620, 16, 0, 196621, 16, 0, 196622, 16, 0, 196623, 16, 0, 196624, 16, 0, 262145, 16, 0, 262146, 16, 0, 262147, 16, 0, 262148, 16, 0, 262149, 16, 0, 262150, 16, 0, 262151, 16, 0, 262152, 16, 0, 262153, 16, 0, 262154, 16, 0, 262155, 16, 0, 262156, 16, 0, 262157, 16, 0, 262158, 16, 0, 262159, 16, 0, 262160, 16, 0, 327680, 16, 0, 327681, 16, 0, 327682, 16, 0, 327683, 16, 0, 327684, 16, 0, 327685, 16, 0, 327686, 16, 0, 327687, 16, 0, 327688, 16, 0, 327689, 16, 0, 327690, 16, 0, 327691, 16, 0, 327692, 16, 0, 327693, 16, 0, 327694, 16, 0, 327695, 16, 0, 327696, 16, 0, 393216, 16, 0, 393217, 16, 0, 393218, 16, 0, 393219, 16, 0, 393220, 16, 0, 393221, 16, 0, 393222, 16, 0, 393223, 16, 0, 393224, 16, 0, 393225, 16, 0, 393226, 16, 0, 393227, 16, 0, 393228, 16, 0, 393229, 16, 0, 393230, 16, 0, 393231, 16, 0, 393232, 16, 0, 458752, 16, 0, 458753, 16, 0, 458754, 16, 0, 458755, 16, 0, 458756, 16, 0, 458757, 16, 0, 458758, 16, 0, 458759, 16, 0, 458760, 16, 0, 458761, 16, 0, 458762, 16, 0, 458763, 16, 0, 458764, 16, 0, 458765, 16, 0, 458766, 16, 0, 458767, 16, 0, 458768, 16, 0, 524288, 16, 0, 524289, 16, 0, 524290, 16, 0, 524291, 16, 0, 524292, 16, 0, 524293, 16, 0, 524294, 16, 0, 524295, 16, 0, 524296, 16, 0, 524297, 16, 0, 524298, 16, 0, 524299, 16, 0, 524300, 16, 0, 524301, 16, 0, 524302, 16, 0, 524303, 16, 0, 524304, 16, 0, 589824, 16, 0, 589825, 16, 0, 589826, 16, 0, 589827, 16, 0, 589828, 16, 0, 589829, 16, 0, 589830, 16, 0, 589831, 16, 0, 589832, 16, 0, 589833, 16, 0, 589834, 16, 0, 589835, 16, 0, 589836, 16, 0, 589837, 16, 0, 589838, 16, 0, 589839, 16, 0, 589840, 16, 0 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 6, 0, 1, 6, 0, 2, 6, 0, 3, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 7, 6, 0, 8, 6, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 6, 0, 13, 6, 0, 14, 6, 0, 15, 9, 0, 65536, 3, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 65549, 5, 0, 65550, 5, 0, 65551, 9, 0, 131072, 3, 0, 131087, 9, 0, 196608, 3, 0, 196623, 9, 0, 262144, 3, 0, 262159, 9, 0, 327680, 3, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 9, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0 )
+
+[node name="TimerLabel" parent="." instance=ExtResource( 2 )]
+
+[node name="LaserDoor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 536, 448 )
+
+[node name="LaserDoor2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 784, 448 )
+isOpen = true
+openOnSwitch = false
+
+[node name="Switch" parent="." instance=ExtResource( 5 )]
+position = Vector2( 400, 464 )
+
+[node name="AD" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 376.0
+margin_right = 256.0
+margin_bottom = 440.0
+custom_fonts/font = SubResource( 4 )
+text = "<- ->
+A  D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+margin_top = 392.0
+margin_right = 126.0
+margin_bottom = 432.0
+custom_fonts/font = SubResource( 4 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame" type="Label" parent="."]
+margin_left = 832.0
+margin_top = 384.0
+margin_right = 1022.0
+margin_bottom = 424.0
+custom_fonts/font = SubResource( 4 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Use" type="Label" parent="."]
+margin_left = 384.0
+margin_top = 392.0
+margin_right = 416.0
+margin_bottom = 432.0
+custom_fonts/font = SubResource( 4 )
+text = "E"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Use2" type="Label" parent="."]
+margin_left = 616.0
+margin_top = 248.0
+margin_right = 960.0
+margin_bottom = 338.0
+custom_fonts/font = SubResource( 4 )
+text = "Hold Q to time travel.
+Watch the timer!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Use3" type="Label" parent="."]
+margin_left = 608.0
+margin_top = 456.0
+margin_right = 632.0
+margin_bottom = 496.0
+custom_fonts/font = SubResource( 4 )
+text = "W"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGame" type="Label" parent="."]
+margin_left = 600.0
+margin_top = 576.0
+margin_right = 756.0
+margin_bottom = 616.0
+custom_fonts/font = SubResource( 4 )
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 216, 480 )
+
+[node name="StartGameArea" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1024, 448 )
+
+[node name="StartCreditsArea" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 448 )
+
+[node name="QuitGameArea" type="Area2D" parent="."]
+position = Vector2( 672, 608 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitGameArea"]
+shape = SubResource( 6 )
+[connection signal="timeout" from="TimerLabel" to="." method="_on_TimerLabel_timeout"]
+[connection signal="switched" from="Switch" to="LaserDoor" method="_on_Switch_switched"]
+[connection signal="switched" from="Switch" to="LaserDoor2" method="_on_Switch_switched"]
+[connection signal="body_entered" from="StartGameArea" to="." method="_on_NextStageArea_body_entered"]
+[connection signal="body_entered" from="StartCreditsArea" to="." method="_on_StartCreditsArea_body_entered"]
+[connection signal="body_entered" from="QuitGameArea" to="." method="_on_QuitGameArea_body_entered"]
