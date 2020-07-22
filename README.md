@@ -6,4 +6,3 @@ A small 2D platform game with time travel
 Download it here 
 https://doubi88.itch.io/only-60-seconds
 
-This is not the current version you find on itch.io, but it will be updated soon.
