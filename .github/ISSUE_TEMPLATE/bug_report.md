@@ -6,14 +6,12 @@ labels: ''
 assignees: Doubi88
 
 ---
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
+**Steps to reproduce**
 1. Go to '...'
 2. Use button '....'
+
+**Actual behavior**
+A clear and concise description of what actually happens after the steps.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
@@ -23,7 +21,7 @@ If applicable, add screenshots to help explain your problem.
 
 **System**
  - OS: [e.g. Windows]
- - Version [e.g. 0.0.1]
+ - Version: [e.g. 0.0.1]
 
 **Additional context**
 Add any other context about the problem here.
