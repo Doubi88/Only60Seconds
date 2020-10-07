@@ -6,3 +6,4 @@ A small 2D platform game with time travel
 Download it here 
 https://doubi88.itch.io/only-60-seconds
 
+*If you would like to contribute, feel free to do so. Please either choose an [existing Issue](https://github.com/Doubi88/Only60Seconds/issues) or [create one](https://github.com/Doubi88/Only60Seconds/issues/new/choose) before creating a pull request.*
